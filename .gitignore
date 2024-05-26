@@ -5,3 +5,5 @@ LunaSharp/obj/
 build/
 TestEnvironmentD3D9/x64/
 x64/
+LunaSharpCore/bin/
+LunaSharpCore/obj/
