@@ -1,4 +1,4 @@
-﻿namespace LunaSharp
+﻿namespace LunaSharpCore
 {
     public enum VirtualKey
     {

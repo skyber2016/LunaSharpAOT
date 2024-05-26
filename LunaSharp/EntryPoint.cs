@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using LunaSharpCore;
+using LunaSharpCore.Utils;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace LunaSharp
@@ -20,6 +22,7 @@ namespace LunaSharp
             {
                 case DLL_PROCESS_ATTACH:
                     HModule = hModule;
+                    Logging.LogAllExceptions();
                     Task.Run(MainThread);
                     Task.Run(DetectExitApplication);
                     break;
@@ -30,30 +33,34 @@ namespace LunaSharp
         }
 
 
-
         private static void MainThread()
         {
-            if (NativeAPI.AllocConsole())
+            if (WinAPI.AllocConsole())
             {
                 Console.WriteLine($"Hello from native AOT Ptr={HModule.ToString("X")}");
             }
-            
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            var ex = e.ExceptionObject as Exception;
+            Logging.Write(true)("FATAL: " + ex.GetBaseException().Message);
+            Logging.Write(true)("FATAL: " + ex.GetBaseException().StackTrace);
         }
 
         private static async Task DetectExitApplication()
         {
             while (true)
             {
-                if (NativeAPI.IsKeyPressed(VirtualKey.VK_ESCAPE))
+                if (WinAPI.IsKeyPressed(VirtualKey.VK_ESCAPE))
                 {
                     Console.WriteLine($"Detected press key {VirtualKey.VK_ESCAPE.ToString()}");
-                    await Task.Delay(2000);
                     break;
                 }
                 await Task.Delay(10);
             }
 
-            if (!NativeAPI.FreeLibrary(HModule))
+            if (!WinAPI.FreeLibrary(HModule))
             {
                 Console.WriteLine("Failed to free library.");
             }
@@ -61,8 +68,7 @@ namespace LunaSharp
             {
                 Console.WriteLine($"Success to free library . {HModule.ToString("X")}");
             }
-            await Task.Delay(2000);
-            if (!NativeAPI.FreeConsole())
+            if (!WinAPI.FreeConsole())
             {
                 Console.WriteLine("Failed to free console.");
             }

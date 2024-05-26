@@ -1,0 +1,12 @@
+D:\coding\LunaSharpAOT\LunaSharpCore\bin\Debug\net8.0\LunaSharpCore.deps.json
+D:\coding\LunaSharpAOT\LunaSharpCore\bin\Debug\net8.0\LunaSharpCore.dll
+D:\coding\LunaSharpAOT\LunaSharpCore\bin\Debug\net8.0\LunaSharpCore.pdb
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.AssemblyInfoInputs.cache
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.AssemblyInfo.cs
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.csproj.CoreCompileInputs.cache
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.sourcelink.json
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.dll
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\refint\LunaSharpCore.dll
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\LunaSharpCore.pdb
+D:\coding\LunaSharpAOT\LunaSharpCore\obj\Debug\net8.0\ref\LunaSharpCore.dll
